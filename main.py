@@ -15,4 +15,5 @@ for f in glob("./**/validation.py", recursive=True):
 
 for val in BaseValidator.__subclasses__():
     impl = val()
-    impl.validate(1)
+    for i in [1, 10, 100]:
+        print(f"validate({i}) -> {impl.validate(i)}")
